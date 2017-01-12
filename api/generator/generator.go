@@ -106,7 +106,7 @@ func computeSum(in []byte) (sum Sum, err error) {
 // key and certificate request on behalf of the client. The format for
 // these requests is documented in the API documentation.
 func (g *Handler) Handle(w http.ResponseWriter, r *http.Request) error {
-	log.Info("request for CSR")
+	log.Info("request for CSR things")
 	body, err := ioutil.ReadAll(r.Body)
 	if err != nil {
 		log.Warningf("failed to read request body: %v", err)
