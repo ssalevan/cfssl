@@ -114,6 +114,8 @@ func (g *Handler) Handle(w http.ResponseWriter, r *http.Request) error {
 	}
 	r.Body.Close()
 
+	log.Debugf("GOT THIS BODY: %s", string(body))
+
 	req := new(csr.CertificateRequest)
 	req.KeyRequest = csr.NewBasicKeyRequest()
 	err = json.Unmarshal(body, req)
