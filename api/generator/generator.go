@@ -225,7 +225,7 @@ type genSignRequest struct {
 // key and certificate on behalf of the client. The format for these
 // requests is documented in the API documentation.
 func (cg *CertGeneratorHandler) Handle(w http.ResponseWriter, r *http.Request) error {
-	log.Info("request for CSR")
+	log.Info("request for CSR again")
 
 	req := new(genSignRequest)
 	req.Request = csr.New()
