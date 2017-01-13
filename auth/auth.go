@@ -13,6 +13,8 @@ import (
 	"io/ioutil"
 	"os"
 	"strings"
+
+	"github.com/cloudflare/cfssl/log"
 )
 
 // An AuthenticatedRequest contains a request and authentication
@@ -83,6 +85,8 @@ func (p Standard) Verify(ad *AuthenticatedRequest) bool {
 	if ad == nil {
 		return false
 	}
+
+	log.Debugf("PROVIDER TOKEN: %x and REQUEST TOKEN: %x", ad.Token, token)
 
 	// Standard token generation returns no error.
 	token, _ := p.Token(ad.Request)
