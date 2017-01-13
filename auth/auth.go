@@ -88,8 +88,6 @@ func (p Standard) Verify(ad *AuthenticatedRequest) bool {
 		return false
 	}
 
-	log.Debugf("PROVIDER TOKEN: %x and REQUEST TOKEN: %x", ad.Token, token)
-
 	// Standard token generation returns no error.
 	token, _ := p.Token(ad.Request)
 	if len(ad.Token) != len(token) {
