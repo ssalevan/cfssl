@@ -194,6 +194,8 @@ func (h *AuthHandler) Handle(w http.ResponseWriter, r *http.Request) error {
 	}
 	r.Body.Close()
 
+	log.Debugf("GOT THIS SIGN BODY: %s", string(body))
+
 	var aReq auth.AuthenticatedRequest
 	err = json.Unmarshal(body, &aReq)
 	if err != nil {
