@@ -82,6 +82,8 @@ func (p Standard) Token(req []byte) (token []byte, err error) {
 
 // Verify determines whether an authenticated request is valid.
 func (p Standard) Verify(ad *AuthenticatedRequest) bool {
+	log.Debugf("VERIFY STANDARD")
+
 	if ad == nil {
 		return false
 	}
