@@ -92,11 +92,11 @@ func (p Standard) Verify(ad *AuthenticatedRequest) bool {
 
 	// Standard token generation returns no error.
 	token, _ := p.Token(ad.Request)
+	log.Debugf("TOKEN WE WANT: %x", token)
+
 	if len(ad.Token) != len(token) {
 		return false
 	}
-
-	log.Debugf("TOKEN WE WANT: %x", token)
 
 	return hmac.Equal(token, ad.Token)
 }
