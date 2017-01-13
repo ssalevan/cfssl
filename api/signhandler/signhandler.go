@@ -228,6 +228,8 @@ func (h *AuthHandler) Handle(w http.ResponseWriter, r *http.Request) error {
 		return errors.NewBadRequestString("no authentication provider")
 	}
 
+	log.Debug("HERE IS THE TOKEN: %x", aReq.Token)
+
 	if !profile.Provider.Verify(&aReq) {
 		log.Warning("received authenticated request with invalid token")
 		return errors.NewBadRequestString("invalid token")
