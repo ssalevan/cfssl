@@ -90,6 +90,8 @@ func (p Standard) Verify(ad *AuthenticatedRequest) bool {
 		return false
 	}
 
+	log.Debugf("THIS IS THE REQ: %s", string(ad.Request))
+
 	log.Debugf("TOKEN ON REQ: %x", ad.Token)
 
 	// Standard token generation returns no error.
