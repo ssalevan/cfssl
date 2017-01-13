@@ -84,6 +84,8 @@ func (p Standard) Token(req []byte) (token []byte, err error) {
 func (p Standard) Verify(ad *AuthenticatedRequest) bool {
 	log.Debugf("VERIFY STANDARD")
 
+	log.Debugf("HERE IS SOME AD: %s", string(p.ad))
+
 	if ad == nil {
 		return false
 	}
